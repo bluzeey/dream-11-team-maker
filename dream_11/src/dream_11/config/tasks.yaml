@@ -1,0 +1,49 @@
+player_analysis_task:
+  description: >
+    Analyze the performance stats of key players from both teams (Team 1: {team1}, Team 2: {team2}) for the upcoming match {match}.
+    Focus on batting averages, strike rates, bowling economy, recent form, injuries, and consistency over the last few matches.
+    Provide recommendations on which players are in top form and should be considered for Dream11 selection.
+  expected_output: >
+    A list of 10 players who are in top form and recommended for the Dream11 team. Include reasoning and stats for each player.
+  agent: player_stats_analyst
+
+pitch_weather_task:
+  description: >
+    Analyze the pitch report and weather conditions for the upcoming IPL match between {team1} and {team2} on {match}.
+    Include details on whether the pitch favors batsmen or bowlers, historical stats at this venue, and how weather might affect play.
+  expected_output: >
+    A detailed report summarizing pitch behavior (batting-friendly, spin-friendly, pace-friendly), weather conditions (rain chances, dew factor), and their expected impact on player selection.
+  agent: pitch_weather_expert
+
+team_form_task:
+  description: >
+    Analyze the current form of both teams ({team1} and {team2}) for the match on {match}.
+    Include recent win/loss record, head-to-head stats, player injuries, and any tactical insights.
+  expected_output: >
+    A report detailing the strengths and weaknesses of both teams, key players to watch, and any strategic considerations.
+  agent: team_form_researcher
+
+fantasy_strategy_task:
+  description: >
+    Using the player stats, pitch and weather analysis, and team form research, suggest an optimal Dream11 strategy.
+    Recommend the best player combinations (batsmen, bowlers, all-rounders, wicketkeepers), captain and vice-captain choices, and explain why.
+  expected_output: >
+    A recommended Dream11 strategy including:
+      - Player combinations (4 batsmen, 3 bowlers, etc.)
+      - 2-3 captain options with reasons
+      - 2-3 vice-captain options with reasons
+      - Justification for the selections based on performance, pitch, and team form analysis.
+  agent: fantasy_strategy_guru
+
+dream11_team_selection_task:
+  description: >
+    Create the final Dream11 team for the upcoming match {match} between {team1} and {team2}.
+    Select 11 players, including the captain and vice-captain, based on all the analyses and strategies gathered.
+  expected_output: >
+      Format your response as a JSON structure with the following keys::
+      - dream11_team: List of selected players
+      - captain: Selected captain name
+      - vice_captain: Selected vice-captain name
+      - key_factors: List of key reasons for the team choices
+      - confidence_level: A percentage indicating confidence in the team selection (0-100)
+  agent: dream11_selector
