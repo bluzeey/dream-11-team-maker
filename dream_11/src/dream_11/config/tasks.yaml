@@ -40,7 +40,7 @@ dream11_team_selection_task:
     Create the final Dream11 team for the upcoming match {match} between {team1} and {team2}.
     Select 11 players, including the captain and vice-captain, based on all the analyses and strategies gathered.
   expected_output: >
-      Format your response as a JSON structure with the following keys::
+      Format your response as a JSON structure with the following keys:
       - dream11_team: List of selected players
       - captain: Selected captain name
       - vice_captain: Selected vice-captain name
